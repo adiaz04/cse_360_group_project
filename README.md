@@ -1,6 +1,6 @@
-# Dice Triva (name...TBD?)
-CSE 360 Group Project - <Description Here>
-##Members:
+# Dice Dash
+##CSE 360 Group Project - <Description Here>
+###Members:
 Braverman, Itay  
 Bruno, Jordan  
 Diaz, Angel  
@@ -20,7 +20,7 @@ We will tag each sprint accordingly, please download sprint at appropriate link.
 ### Each tag will include a directory with 3 folders 
   * documentation/ 
   * build/          (binary exe)
-  * dice_trive/     (source code)
+  * dice_dash/     (source code)
 
 ## Building:
 Nothing to build yet...
