@@ -14,6 +14,7 @@ GameObject:
   - 54: {fileID: 5432052}
   - 64: {fileID: 6448138}
   - 154: {fileID: 15479452}
+  - 114: {fileID: 11476760}
   m_Layer: 0
   m_Name: die
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197554}
-  m_LocalRotation: {x: 0.42948654, y: 0, z: 0, w: -0.9030733}
-  m_LocalPosition: {x: 0, y: 21.6, z: -0}
+  m_LocalRotation: {x: 0.7976421, y: -0.16217351, z: -0.15509471, w: -0.55983263}
+  m_LocalPosition: {x: 5.85, y: 21.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,6 +111,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11476760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4b2e541d403f647977355d11354b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torqueAmount: 100000
+  torque: 0
+  roll: 1
 --- !u!154 &15479452
 TerrainCollider:
   m_ObjectHideFlags: 1
