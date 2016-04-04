@@ -8,6 +8,6 @@ PhysicMaterial:
   m_Name: die_bounce
   dynamicFriction: 0.6
   staticFriction: 0.6
-  bounciness: 1
+  bounciness: 0.68
   frictionCombine: 0
   bounceCombine: 0

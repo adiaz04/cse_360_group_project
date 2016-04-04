@@ -22,6 +22,7 @@ public class Dice : MonoBehaviour {
     void Roll()
     {
         torque = Random.Range(500, torqueAmount) * (Time.deltaTime * 100);
+        GetComponent<Rigidbody>().rotation = Random.rotation;
         GetComponent<Rigidbody>().AddTorque(transform.up * torque * torqueAmount);
         GetComponent<Rigidbody>().AddTorque(transform.right * torque * torqueAmount);
         roll = false;
