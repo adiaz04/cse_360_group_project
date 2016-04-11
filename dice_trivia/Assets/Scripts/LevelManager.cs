@@ -115,6 +115,7 @@ public class LevelManager : MonoBehaviour
         }
         playerTotalTime += Time.deltaTime; // Updating the timer
         timeToRollDice = false;
+
     }
 
     public void StartGame()
@@ -232,7 +233,7 @@ public class LevelManager : MonoBehaviour
     public void movePlayer(int inSpotsToMove)
     {
 
-        if (currentPlayerLocation >= boardSpots.Length && playerTotalTime < TopTotalTime)
+        if (currentPlayerLocation >= boardSpots.Length-1 && playerTotalTime < TopTotalTime)
         {
             SaveData(); // Saving data to file when player reached to the end
         }
