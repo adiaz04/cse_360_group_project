@@ -1,5 +1,6 @@
 # This is a comment, all lines starting with '#' are comments
 Q This is the first question. All questions begin with 'Q'
+# All answers are added to the last declared questions
 C This is the correct answer, it starts with 'C'.
 A This is another answer, as the 'A' designates.
 A This is another answer, as the 'A' designates.
