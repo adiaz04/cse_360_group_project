@@ -5,10 +5,9 @@ public class Dice : MonoBehaviour {
 
     public float torqueAmount = 100000;
     public float torque;
-    public bool roll = false;
     public int value = 0;
 
-    private Transform startingPosition;
+    public Transform startingPosition;
     private bool rolled = false;
 
     /// <summary>
@@ -29,18 +28,9 @@ public class Dice : MonoBehaviour {
     {
         get
         {
-            rolled = false;
-            resetLocation();
             return value;
         }
     }
-
-	/// <summary>
-    /// Record starting position.
-    /// </summary>
-	void Start () {
-        startingPosition = transform;
-	}
 
     /// <summary>
     /// Update is called once per frame
@@ -48,6 +38,11 @@ public class Dice : MonoBehaviour {
     void Update () {
         if (!rolling && rolled)
             CalculateValue();
+        if (!rolled)
+        {
+            transform.rotation = Random.rotation;
+            transform.position = startingPosition.position;
+        }
 	}
 
     /// <summary>
@@ -79,7 +74,7 @@ public class Dice : MonoBehaviour {
         if (dotUp > 0.99f)
             value = 3;
         else if (dotUp < -0.99f)
-            dotUp = 4;
+            value = 4;
         Debug.Log(value);
     }
 
@@ -93,7 +88,17 @@ public class Dice : MonoBehaviour {
         GetComponent<Rigidbody>().rotation = Random.rotation;
         GetComponent<Rigidbody>().AddTorque(transform.up * torque * torqueAmount);
         GetComponent<Rigidbody>().AddTorque(transform.right * torque * torqueAmount);
+        rolled = true;
     }
 
-    
+    /// <summary>
+    /// Reset Dice in prepartion for next roll.
+    /// </summary>
+    public void Reset()
+    {
+        GetComponent<Rigidbody>().useGravity = false;
+        transform.position = startingPosition.position;
+        rolled = false;
+        value = 0;
+    }
 }
