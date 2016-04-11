@@ -1,8 +1,0 @@
-language: csharp
-solution: dice_trivia/dice_trivia.sln
-install:
-  - nuget restore dice_trivia/dice_trivia.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Debug dice_trivia/dice_trivia.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./dice_trivia/Assembly-CSharpTests/bin/Debug/Assembly-CSharpTests.dll
