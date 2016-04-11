@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         // scene init.
-
+        targetLocation = transform;
         // Getting the animation component
         animator = playerAvatar.GetComponent<Animator>();
     }
