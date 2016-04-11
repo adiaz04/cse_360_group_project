@@ -1,9 +1,9 @@
 language: csharp
 script:
-  - xbuild /p:Configuration=Debug dice_trivia.sln
+  - xbuild /p:Configuration=Debug dice_trivia/dice_trivia.sln
 before _install:
   - sudo apt-get install nunit-console
 before_script:
-  - nuget restore dice_trivia.sln
+  - nuget restore dice_trivia/dice_trivia.sln
 after_script:
   - nunit-console Tests/bin/Debug/Tests.dll
