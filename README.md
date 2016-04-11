@@ -13,7 +13,7 @@ Our Scrum backlog can be found here [backlog](https://trello.com/b/lpryJmT0/back
 # Sprints
 We will tag each sprint accordingly, please download sprint at appropriate link.
 
-- [ ] [Sprint 1] () Due - 1 April 2016
+- [x] [Sprint 1] (https://github.com/skinnyMan/cse_360_group_project/releases/tag/Sprint1) Due - 1 April 2016
 - [ ] [Sprint 2] () Due - 15 April 2016
 - [ ] [Sprint 3] () Due - 29 April 2016
 
