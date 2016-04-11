@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using System.Collections;
 
 public class Answer
 {
@@ -17,6 +18,18 @@ public class Answer
 public class Question
 {
 	public String name;
-	public Answer[] answers;
-	public Question () {}
+	public ArrayList answers;
+	public Question (String name)
+	{
+		this.name = name;
+		this.answers = new ArrayList ();
+	}
+	public Question AddAnswer(String name, bool correct)
+	{
+		Answer answer = new Answer ();
+		answer.name = name;
+		answer.correct = correct;
+		answers.Add (answer);
+		return this;
+	}
 }
