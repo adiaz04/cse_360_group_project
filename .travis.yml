@@ -1,5 +1,7 @@
 language: csharp
 solution: dice_trivia.sln
+before_install:
+  - cd dice_trivia/
 install:
   - nuget restore dice_trivia.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
