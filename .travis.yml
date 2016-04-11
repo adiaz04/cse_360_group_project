@@ -7,7 +7,7 @@ install:
   - nuget restore dice_trivia.sln
   - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner
   - ls testrunner/NUnit.Runners.3.2.0/
-  - ls testrunner/NUnit.Runners.3.2.0/NUnit.Runners.*.nupkg/
+  - ls testrunner/NUnit.Runners.3.2.0/NUnit.Runners.3.2.0.nupkg/
 script:
   - xbuild /p:Configuration=Debug dice_trivia.sln
   - mono ./testrunner/NUnit.Runners.3.2.0/tools/nunit-console.exe ./Assembly-CSharpTests/bin/Debug/Assembly-CSharpTests.dll
