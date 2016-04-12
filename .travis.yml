@@ -2,8 +2,6 @@ language: csharp
 solution: dice_trivia.sln
 before_install:
   - cd dice_trivia/
-  - ls
-  - ls testrunner/NUnit.ConsoleRunner.3.2.0/tools/
 script:
   - xbuild /p:Configuration=Debug dice_trivia.sln
   - mono ./packages/NUnit.ConsoleRunner.3.2.0/tools/nunit3-console.exe ./Assembly-CSharpTests/bin/Debug/Assembly-CSharp.dll
