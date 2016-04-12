@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,52 +7,52 @@ using System.Threading.Tasks;
 
 namespace Tests
 {
-    [TestClass()]
+    [TestFixture()]
     public class LevelManagerTests
     {
-        [TestMethod()]
+        [Test()]
         public void StartGameTest()
         {
             Assert.IsTrue(true);
         }
 
-        [TestMethod()]
+        [Test()]
         public void checkAnswerTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [Test()]
         public void movePlayerTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [Test()]
         public void RollDiceTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [Test()]
         public void SetLastMoveTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [Test()]
         public void GetDataTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [Test()]
         public void SaveDataTest()
         {
             Assert.Fail();
         }
 
-        [TestMethod()]
+        [Test()]
         public void LoadDataTest()
         {
             Assert.Fail();

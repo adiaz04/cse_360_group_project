@@ -20,3 +20,5 @@ C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\De
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\obj\Debug\Assembly-CSharpTests.csprojResolveAssemblyReference.cache
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\obj\Debug\Assembly-CSharpTests.dll
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\obj\Debug\Assembly-CSharpTests.pdb
+C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\nunit.framework.dll
+C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\nunit.framework.xml
