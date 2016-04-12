@@ -1,4 +1,4 @@
-# Dice Dash [![Build Status](https://travis-ci.org/skinnyMan/cse_360_group_project.svg?branch=travis_ci)](https://travis-ci.org/skinnyMan/cse_360_group_project)
+# Dice Dash [![Build Status](https://travis-ci.org/skinnyMan/cse_360_group_project.svg?branch=master)](https://travis-ci.org/skinnyMan/cse_360_group_project)
 ##CSE 360 Group Project - <Description Here>
 ###Members:
 Braverman, Itay  
