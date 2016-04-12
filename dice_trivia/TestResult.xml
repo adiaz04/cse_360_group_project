@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="8" result="Passed" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="8" engine-version="3.2.0.0" clr-version="4.0.30319.42000" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.073705">
+  <command-line><![CDATA[packages\NUnit.ConsoleRunner.3.2.0\tools\nunit3-console.exe  Assembly-CSharpTests\bin\Debug\Assembly-CSharpTests.dll]]></command-line>
+  <test-suite type="Assembly" id="0-1009" name="Assembly-CSharpTests.dll" fullname="C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharpTests.dll" runstate="Runnable" testcasecount="8" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.026796" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="8">
+    <environment framework-version="3.2.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.10586.0" platform="Win32NT" cwd="C:\Users\adiaz\git\cse_360_group_project\dice_trivia" machine-name="DESKTOP-KF7M4BB" user="adiaz" user-domain="DESKTOP-KF7M4BB" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="WorkDirectory" value="C:\Users\adiaz\git\cse_360_group_project\dice_trivia" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.5" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="9708" />
+      <property name="_APPDOMAIN" value="test-domain-" />
+    </properties>
+    <test-suite type="TestSuite" id="0-1010" name="Tests" fullname="Tests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.018912" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="8">
+      <test-suite type="TestFixture" id="0-1000" name="LevelManagerTests" fullname="Tests.LevelManagerTests" classname="Tests.LevelManagerTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.017326" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="8">
+        <test-case id="0-1002" name="checkAnswerTest" fullname="Tests.LevelManagerTests.checkAnswerTest" methodname="checkAnswerTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="1630670862" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.005726" asserts="1" />
+        <test-case id="0-1006" name="GetDataTest" fullname="Tests.LevelManagerTests.GetDataTest" methodname="GetDataTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="1896201078" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000163" asserts="1" />
+        <test-case id="0-1008" name="LoadDataTest" fullname="Tests.LevelManagerTests.LoadDataTest" methodname="LoadDataTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="1658039280" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000147" asserts="1" />
+        <test-case id="0-1003" name="movePlayerTest" fullname="Tests.LevelManagerTests.movePlayerTest" methodname="movePlayerTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="993609143" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000087" asserts="1" />
+        <test-case id="0-1004" name="RollDiceTest" fullname="Tests.LevelManagerTests.RollDiceTest" methodname="RollDiceTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="277322916" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000209" asserts="1" />
+        <test-case id="0-1007" name="SaveDataTest" fullname="Tests.LevelManagerTests.SaveDataTest" methodname="SaveDataTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="421480137" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000101" asserts="1" />
+        <test-case id="0-1005" name="SetLastMoveTest" fullname="Tests.LevelManagerTests.SetLastMoveTest" methodname="SetLastMoveTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="813987263" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000140" asserts="1" />
+        <test-case id="0-1001" name="StartGameTest" fullname="Tests.LevelManagerTests.StartGameTest" methodname="StartGameTest" classname="Tests.LevelManagerTests" runstate="Runnable" seed="798259755" result="Passed" start-time="2016-04-12 01:31:47Z" end-time="2016-04-12 01:31:47Z" duration="0.000098" asserts="1" />
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
