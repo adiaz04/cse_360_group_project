@@ -4,4 +4,4 @@ before_install:
   - cd dice_trivia/
 script:
   - xbuild /p:Configuration=Debug dice_trivia.sln
-  - mono ./packages/NUnit.ConsoleRunner.3.2.0/tools/nunit3-console.exe ./Assembly-CSharpTests/bin/Debug/Assembly-CSharp.dll
+  - mono ./packages/NUnit.ConsoleRunner.3.2.0/tools/nunit3-console.exe ./Assembly-CSharpTests/bin/Debug/Assembly-CSharpTests.dll
