@@ -5,6 +5,11 @@ public class Player : MonoBehaviour
 {
     public Vector3 speed = Vector3.zero;
     public float smoothTime = 0.5F;
+    public bool Moving
+    {
+        get { return this.moving; }
+    }
+    private bool moving = false;
     private Transform targetLocation;
 
 
@@ -34,16 +39,18 @@ public class Player : MonoBehaviour
 
         if (transform.position != targetLocation.position)
         {
+            moving = true;
             animator.enabled = true;
             animator.speed = 2.0f;
             animator.Play("Walk");
+            
         }
         else
         {
             animator.enabled = true;
             animator.speed = 2.0f;
             animator.Play("Idle");
-
+            moving = false;
         }
 
     }

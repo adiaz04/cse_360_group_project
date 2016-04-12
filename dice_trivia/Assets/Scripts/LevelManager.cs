@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
         idle = 0,
         timeToRollDice,
         diceRolled,
+        moving,
         question,
         standby
     }
@@ -110,6 +111,12 @@ public class LevelManager : MonoBehaviour
                 SetLastMove(value);
                 dice1.GetComponent<Dice>().Reset();
                 dice2.GetComponent<Dice>().Reset();
+            }
+        }
+        else if (CurrentState == State.moving)
+        {
+            if (!player.Moving)
+            {
                 CurrentState = State.question;
             }
         }
@@ -127,6 +134,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void StateChanged()
     {
+        Debug.Log(CurrentState);
         MoveCamera();
         switch (state)
         {
@@ -137,6 +145,9 @@ public class LevelManager : MonoBehaviour
                 break;
             case State.diceRolled:
                 rollButton.SetActive(false);
+                break;
+            case State.question:
+                quizMenu.SetActive(true);
                 break;
             case State.standby:
                 break;
@@ -160,7 +171,7 @@ public class LevelManager : MonoBehaviour
             Camera.main.transform.position = diceCameraLocation.position;
             Camera.main.transform.rotation = diceCameraLocation.transform.rotation;
         }
-        else if (CurrentState == State.idle || CurrentState == State.question)
+        else if (CurrentState == State.idle || CurrentState == State.question || CurrentState == State.moving)
         {
             Camera.main.transform.parent = playerCameraLocation;
             Camera.main.transform.position = playerCameraLocation.position;
@@ -184,7 +195,7 @@ public class LevelManager : MonoBehaviour
         if (!theAnswer)
         {
             playerTotalFalse += 1; // Incrementing total false answers
-
+            quizMenu.SetActive(false);
             if (PlayerInaRow == -2)
             {
                 movePlayer((playerLastMove * -1) + 2);
@@ -206,7 +217,7 @@ public class LevelManager : MonoBehaviour
         }
         else {
             playerTotalTrue += 1;
-
+            quizMenu.SetActive(false);
             if (PlayerInaRow == 2)
             {
                 movePlayer(2);
@@ -232,7 +243,7 @@ public class LevelManager : MonoBehaviour
     /// <param name="inSpotsToMove"></param>
     public void movePlayer(int inSpotsToMove)
     {
-
+        CurrentState = State.moving;
         if (currentPlayerLocation >= boardSpots.Length-1 && playerTotalTime < TopTotalTime)
         {
             SaveData(); // Saving data to file when player reached to the end
@@ -246,15 +257,15 @@ public class LevelManager : MonoBehaviour
                 currentPlayerLocation = boardSpots.Length - 1;
             player.MoveToPosition(boardSpots[currentPlayerLocation]);
             Debug.Log("moving player forward: " + inSpotsToMove);
-            if (inSpotsToMove > 0)
-            {
-                quizMenu.SetActive(true);
-                diceMenu.SetActive(false);
-            }
-            else {
-                quizMenu.SetActive(false);
-                diceMenu.SetActive(true);
-            }
+            //if (inSpotsToMove > 0)
+            //{
+            //    quizMenu.SetActive(true);
+            //    diceMenu.SetActive(false);
+            //}
+            //else {
+            //    quizMenu.SetActive(false);
+            //    diceMenu.SetActive(true);
+            //}
         }
 
     }
