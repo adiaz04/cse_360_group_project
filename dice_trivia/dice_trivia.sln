@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dice_trivia.CSharp.Plugins", "dice_trivia.CSharp.Plugins.csproj", "{7F61560F-D742-C294-924F-070C481ED454}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dice_trivia.CSharp", "dice_trivia.CSharp.csproj", "{D35B9777-C4E2-0D2D-DF0C-8286BE82D349}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dice_trivia.CSharp.Editor", "dice_trivia.CSharp.Editor.csproj", "{8A481F40-E921-EA3F-EF7B-C5AE945FC14D}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F61560F-D742-C294-924F-070C481ED454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F61560F-D742-C294-924F-070C481ED454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F61560F-D742-C294-924F-070C481ED454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F61560F-D742-C294-924F-070C481ED454}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D35B9777-C4E2-0D2D-DF0C-8286BE82D349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D35B9777-C4E2-0D2D-DF0C-8286BE82D349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D35B9777-C4E2-0D2D-DF0C-8286BE82D349}.Release|Any CPU.ActiveCfg = Release|Any CPU
