@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scenes\showData.cs" />
+    <Compile Include="Assets\Scripts\Answer.cs" />
     <Compile Include="Assets\Scripts\CameraPosition.cs" />
     <Compile Include="Assets\Scripts\Dice.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
@@ -76,6 +77,9 @@
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
+    <Compile Include="Assets\Scripts\Question.cs" />
+    <Compile Include="Assets\Scripts\QuestionController.cs" />
+    <Compile Include="Assets\Scripts\QuizController.cs" />
     <Compile Include="Assets\Scripts\timer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +87,7 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\Text\questions.txt" />
     <None Include="Assets\TinyWarrior\Documents\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

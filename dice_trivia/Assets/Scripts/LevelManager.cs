@@ -5,6 +5,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,11 +13,20 @@ public class LevelManager : MonoBehaviour
     public Transform spotTypeRed;
     public Transform spotTypeBlue;
     public Player player;
+    public QuestionController questionController;
     public GameObject rollButton;
     public Transform playerCameraLocation;
     public Transform diceCameraLocation;
     public Transform dice1;
     public Transform dice2;
+
+    // UI QUIZ TEXT
+    public Text quesitonText;
+    public Text answerA;
+    public Text answerB;
+    public Text answerC;
+    public Text answerD;
+
     public int numberOfSpots = 60;
     public bool move = false;
     public bool timeToRollDice = false;
@@ -156,13 +166,24 @@ public class LevelManager : MonoBehaviour
                 rollButton.SetActive(false);
                 break;
             case State.question:
-                quizMenu.SetActive(true);
+                UpdateQuestionUI();
                 break;
             case State.standby:
                 break;
             default:
                 break;
         }
+    }
+
+    private void UpdateQuestionUI()
+    {
+        quizMenu.SetActive(true);
+        quesitonText.text = questionController.getQuestion();
+        List<Answer> answers = questionController.GetPossibleAnswers();
+        answerA.GetComponent<Text>().text = answers[0].GetName();
+        answerB.GetComponent<Text>().text = answers[1].GetName();
+        answerC.GetComponent<Text>().text = answers[2].GetName();
+        answerD.GetComponent<Text>().text = answers[3].GetName();
     }
 
     private IEnumerator Delay (int seconds)
@@ -188,15 +209,21 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-
     /// <summary>
-    /// Move player appropriate number of spaces.
+    /// Check answer using index.
     /// </summary>
-    /// <param name="inSpotsToMove"></param>
-    /// 
-
-    // Moved to the Player prefab
-
+    /// <param name="index"></param>
+    public void checkAnswer(int index)
+    {
+        if (questionController.checkAnswer(index))
+        {
+            checkAnswer(true);
+        }
+        else
+        {
+            checkAnswer(false);
+        }
+    }
 
     // Calculating movment based on the quiz answer and the answers history
     public void checkAnswer(bool theAnswer)
