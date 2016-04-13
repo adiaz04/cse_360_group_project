@@ -35,6 +35,8 @@ public class LevelManager : MonoBehaviour
         timeToRollDice,
         diceRolled,
         moving,
+        movingForward,
+        movingBackward,
         question,
         standby
     }
@@ -120,9 +122,16 @@ public class LevelManager : MonoBehaviour
                 CurrentState = State.question;
             }
         }
+        else if (CurrentState == State.movingForward || CurrentState == State.movingBackward)
+        {
+            if (Vector3.Distance(player.transform.position, boardSpots[currentPlayerLocation].position) < 0.5)
+            {
+                
+                CurrentState = State.timeToRollDice;
+            }
+        }
         playerTotalTime += Time.deltaTime; // Updating the timer
         timeToRollDice = false;
-
     }
 
     public void StartGame()
@@ -196,6 +205,7 @@ public class LevelManager : MonoBehaviour
         {
             playerTotalFalse += 1; // Incrementing total false answers
             quizMenu.SetActive(false);
+            
             if (PlayerInaRow == -2)
             {
                 movePlayer((playerLastMove * -1) + 2);
@@ -214,12 +224,15 @@ public class LevelManager : MonoBehaviour
                     diceMenu.SetActive(true);
                 }
             }
+            CurrentState = State.movingBackward;
         }
         else {
             playerTotalTrue += 1;
             quizMenu.SetActive(false);
+            
             if (PlayerInaRow == 2)
             {
+                //rrentState = State.movingForward;
                 movePlayer(2);
                 PlayerInaRow = 0;
             }
@@ -232,9 +245,10 @@ public class LevelManager : MonoBehaviour
                 {
                     PlayerInaRow += 1;
                 }
+                
             }
+            CurrentState = State.movingForward;
         }
-        CurrentState = State.timeToRollDice;
     }
 
     /// <summary>
@@ -243,7 +257,7 @@ public class LevelManager : MonoBehaviour
     /// <param name="inSpotsToMove"></param>
     public void movePlayer(int inSpotsToMove)
     {
-        CurrentState = State.moving;
+        
         if (currentPlayerLocation >= boardSpots.Length-1 && playerTotalTime < TopTotalTime)
         {
             SaveData(); // Saving data to file when player reached to the end
@@ -256,16 +270,6 @@ public class LevelManager : MonoBehaviour
             else
                 currentPlayerLocation = boardSpots.Length - 1;
             player.MoveToPosition(boardSpots[currentPlayerLocation]);
-            Debug.Log("moving player forward: " + inSpotsToMove);
-            //if (inSpotsToMove > 0)
-            //{
-            //    quizMenu.SetActive(true);
-            //    diceMenu.SetActive(false);
-            //}
-            //else {
-            //    quizMenu.SetActive(false);
-            //    diceMenu.SetActive(true);
-            //}
         }
 
     }
@@ -280,6 +284,7 @@ public class LevelManager : MonoBehaviour
     public void SetLastMove(int diceResult)
     {
         playerLastMove = diceResult;
+        CurrentState = State.moving;
         movePlayer(diceResult);
     }
 

@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
     public Vector3 speed = Vector3.zero;
-    public float smoothTime = 0.5F;
+    public float smoothTime = 0.3F;
     public bool Moving
     {
         get { return this.moving; }
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, targetLocation.position, ref speed, smoothTime);
         }
 
-        if (transform.position != targetLocation.position)
+        if (Vector3.Distance(transform.position,targetLocation.position) > 0.5)
         {
             moving = true;
             animator.enabled = true;
