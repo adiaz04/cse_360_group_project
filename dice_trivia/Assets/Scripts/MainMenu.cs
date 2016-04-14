@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour {
 
 	public void NewGame()
 	{
-		Application.LoadLevel (startLevel);
+        StartCoroutine("FadeOut");
 	}
 
     public void Update()
@@ -34,6 +34,15 @@ public class MainMenu : MonoBehaviour {
 	{
 		Application.Quit ();
 	}
+
+    IEnumerator FadeOut()
+    {
+        float fadeTime = GameObject.Find("Main Menu").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(fadeTime + 5f);
+        Application.LoadLevel(startLevel);
+
+        Debug.Log("Faded Out");
+    }
 
     public void ResetData()
     {

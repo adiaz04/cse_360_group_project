@@ -667,6 +667,7 @@ GameObject:
   - 222: {fileID: 1683325170}
   - 114: {fileID: 1683325169}
   - 114: {fileID: 1683325175}
+  - 114: {fileID: 1683325176}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -794,6 +795,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLevel: Board
   statsLevel: 
+--- !u!114 &1683325176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683325168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41180e1a31d094d4a993cf6ae0ad5585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: f393339d8ba2891408185d331d87b45f, type: 3}
+  fadeSpeed: .25
 --- !u!1 &1799763510
 GameObject:
   m_ObjectHideFlags: 0
