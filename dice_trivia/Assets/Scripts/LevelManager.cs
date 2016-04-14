@@ -237,18 +237,16 @@ public class LevelManager : MonoBehaviour
             {
                 movePlayer((playerLastMove * -1) + 2);
                 PlayerInaRow = 0;
-                diceMenu.SetActive(true);
             }
             else {
                 movePlayer(playerLastMove * -1);
                 if (PlayerInaRow > 0)
                 {
-                    PlayerInaRow = -1;
+                    PlayerInaRow += -1;
                 }
                 else
                 {
-                    PlayerInaRow -= 1;
-                    diceMenu.SetActive(true);
+                    PlayerInaRow = 0;
                 }
             }
             CurrentState = State.movingBackward;
