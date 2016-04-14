@@ -1,8 +1,151 @@
 # This is a comment, all lines starting with '#' are comments
-Q This is the first question. All questions begin with 'Q'
+Q Which of the following is NOT an objective for building a requirements model?
 # All answers are added to the last declared questions
-C This is the correct answer, it starts with 'C'.
-A This is another answer, as the 'A' designates.
-A This is another answer, as the 'A' designates.
-A You can have as many answers as needed
+C Develop an abbreviated solution for the problem.
+A Establish a basis for software design.
+A Define a set of software requirements that can be validated.
+A Describe customer requirements.
+# The next question should go below
+Q Which of the following is NOT a goal for the validation activity of requirements engineering?
+A Finding the missing information.
+A Finding unrealistic requirements.
+A Finding errors in interpretation.
+C Finding errors in planned releases.
+# The next question should go below
+Q Which of the following is NOT aa nonfunctional requirement?
+C Correctness.
+A Portability.
+A Ease of use.
+A Robustness.
+# The next question should go below
+Q How are use cases helpful?
+A For generating test cases.
+A In determining requirements.
+A In communicating with clients
+C All of the above.
+# The next question should go below
+Q Which of the following is NOT part of the definition of "use case"?
+A Value of a particular actor.
+C Required actions to be performed.
+A Sequence of actions.
+A Observable results.
+# The next question should go below
+Q Which of the following is a good name for a use case?
+C Make appointment.
+A Appointment.
+A Doctor.
+A Patient.
+# The next question should go below
+Q A use case scenario is
+A The same thing as a user story.
+C A textual description of actions and conditions.
+A A high level design.
+A A list of requirements.
+# The next question should go below
+Q In a use case diagram, common usages that are required by multiple use case diagrams are marked as
+A <<extend>>
+C <<include>>
+A A straight line.
+A An open arrow.
+# The next question should go below
+Q The common template for a user story is "As a <A>, I want to <B> so <C>". What is <A>?
+A A developer.
+C A type of user.
+A A customer.
+A None of the above.
+# The next question should go below
+Q The common template for a user story is "As a <A>, I want to <B> so <C>". What is <C>?
+C The desired result for the user.
+A The end condition in the system.
+A The action in the system.
+# The next question should go below
+Q When a user story is too large to be coded and tested within iteration, it is called a(n)?
+A Long story.
+A Bad requirement.
+C Epic.
+A Saga.
+# The next question should go below
+Q Data flow diagrams are an example of
+A Behavioral models.
+A Class models.
+A Scenario-based models.
+C Flow models.
+# The next question should go below
+Q A data flow diagram represents how
+A Data objects interact with each other.
+A Data object represent the state of an object.
+C Data objects are transformed as they move through the system.
+A Data objects are related to each other.
+# The next question should go below
+Q In a data flow diagram, an external entity is represented by a(n)
+A Stick figure with a label.
+C Rectangle with a label.
+A Oval with a label.
+A Arrow with a label.
+# The next question should go below
+Q A level 0 data flow diagram is also called a(n)
+A Abstract diagram.
+A Main diagram.
+C Context level diagram.
+A High level diagram.
+# The next question should go below
+Q If there are 3 binary conditions in a decision table, how many rules are there assuming that no rules are reduced?
+A 4
+C 8
+A 16
+A Cannot be determined.
+# The next question should go below
+Q Which of the following is NOT an analysis modeling approach?
+A Behavioral models.
+C Prototyping.
+A Scenario-based models.
+A Flow models.
+# The next question should go below
+Q A UML class diagram represents the _____ relationships among classes.
+C Static
+A Data
+A Dynamic
+A Interacting
+# The next question should go below
+Q Encapsulation supports the concept of
+A Polymorphism.
+A Structured design.
+A Inheritance.
+C Information hiding.
+# The next question should go below
+Q A(n) ____ class serves as an interface between the system and its environment.
+A Entity
+A Control
+A Communication
+C Boundary
+# The next question should go below
+Q A technique to identify classes is to parse a description and
+A Identify classes by data and operations by data flows.
+A Identify classes by actors and operations by services.
+C Identify classes by nouns and operations by verbs.
+A Identify classes by verbs and operations.
+# The next question should go below
+Q What is not true about creating CRC cards?
+A Participants act out the behaviors of classes.
+A Class definitions can change during the sessions.
+C It is best to use a software tool rather than physical cards.
+A It is a group activity, rather than an individual activity.
+# The next question should go below
+Q Superclasses are identified on CRC cards. This indicates
+C Another class inherits from this class.
+A Another class uses the class.
+A This class uses another class.
+A This class inherits from another class.
+# The next question should go below
+Q Inheritance is also called
+C Generalization.
+A Composition.
+A Association.
+A Aggregation.
+# The next question should go below
+Q The relationship between two or more objects where all objects have their own lifecycle and there is no owner is
+A Generalization.
+A Composition.
+C Association.
+A Aggregation.
 # The next question should go below
