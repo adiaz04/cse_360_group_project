@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuItem: Correct
-  MenuType: 
+  MenuType: Current
 --- !u!114 &121871336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuItem: Time
-  MenuType: 
+  MenuType: Current
 --- !u!114 &693151493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuItem: False
-  MenuType: 
+  MenuType: Current
 --- !u!114 &1550841451
 MonoBehaviour:
   m_ObjectHideFlags: 0

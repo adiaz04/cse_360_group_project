@@ -258,13 +258,13 @@ public class LevelManager : MonoBehaviour
             }
             else {
                 movePlayer(playerLastMove * -1);
-                if (PlayerInaRow > 0)
+                if (PlayerInaRow < 0)
                 {
                     PlayerInaRow += -1;
                 }
                 else
                 {
-                    PlayerInaRow = 0;
+                    PlayerInaRow = -1;
                 }
             }
             CurrentState = State.movingBackward;
