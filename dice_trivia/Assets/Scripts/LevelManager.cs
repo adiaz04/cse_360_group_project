@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
         LoadData(); // Loading top score statistics from file
          
         source = GetComponent<AudioSource>();
-        playSound(4, false, 1.5f);
+        playSound(4, false, 0f);
         quizMenu.SetActive(false); // Hiding the DEV quiz panel
         rollButton.SetActive(false);
         for (int index = 0; index < numberOfSpots; index++)
