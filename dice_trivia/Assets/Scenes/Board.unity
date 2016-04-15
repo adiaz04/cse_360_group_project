@@ -874,6 +874,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a4fd1357863547a439361eda7fb2ef4e, type: 3}
   - {fileID: 8300000, guid: e7d581a81870c4d4cb9a1a9f98eb831d, type: 3}
   - {fileID: 8300000, guid: dd0b42a9c68a7a94595e1379e6d075af, type: 3}
+  - {fileID: 8300000, guid: e30260ce638102945a79f94e63777527, type: 3}
+  - {fileID: 8300000, guid: 80f4bff8f8fc192488b044ab95c13c61, type: 3}
   rolled: 0
   diceMenu: {fileID: 1843655527}
   quizMenu: {fileID: 558874565}
@@ -9343,6 +9345,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 283992544}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 80f4bff8f8fc192488b044ab95c13c61,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
