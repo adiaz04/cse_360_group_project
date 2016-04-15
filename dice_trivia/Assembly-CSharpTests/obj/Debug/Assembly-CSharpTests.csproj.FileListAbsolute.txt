@@ -46,3 +46,26 @@ C:\Users\Gateway\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\
 C:\Users\Gateway\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 C:\Users\Gateway\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEngine.UI.xml
 C:\Users\Gateway\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEditor.xml
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\obj\Debug\Assembly-CSharpTests.csprojResolveAssemblyReference.cache
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\obj\Debug\Assembly-CSharpTests.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\obj\Debug\Assembly-CSharpTests.pdb
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharpTests.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharpTests.pdb
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharp.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\nunit.framework.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEngine.UI.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEditor.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Mono.Cecil.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Unity.DataContract.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Unity.CecilTools.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\nunit.framework.xml
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEngine.xml
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEngine.UI.xml
+C:\Users\Itay Braverman\Documents\GitHub\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEditor.xml

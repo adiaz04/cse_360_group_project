@@ -270,29 +270,41 @@ public class LevelManager : MonoBehaviour
             CurrentState = State.movingBackward;
         }
         else {
-            playSound(2, false, 0.0f);
-            statsfromlevel.playerTotalTrue += 1;
-            quizMenu.SetActive(false);
 
-            if (PlayerInaRow == 2)
+            if (currentPlayerLocation >= boardSpots.Length - 1)
             {
-                //rrentState = State.movingForward;
-                movePlayer(2);
-                PlayerInaRow = 0;
+                if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime || statsfromlevel.TopTotalTime == 0.0F)
+                    statsfromlevel.SaveData(); // Saving data to file when player reached to the end
+                Application.LoadLevel("Finish");
             }
             else {
-                if (PlayerInaRow < 0)
-                {
-                    PlayerInaRow = 1;
-                }
-                else
-                {
-                    PlayerInaRow += 1;
-                }
 
+                playSound(2, false, 0.0f);
+                statsfromlevel.playerTotalTrue += 1;
+                quizMenu.SetActive(false);
+
+                if (PlayerInaRow == 2)
+                {
+                    //rrentState = State.movingForward;
+                    movePlayer(2);
+                    PlayerInaRow = 0;
+                }
+                else {
+                    if (PlayerInaRow < 0)
+                    {
+                        PlayerInaRow = 1;
+                    }
+                    else
+                    {
+                        PlayerInaRow += 1;
+                    }
+
+                }
+                CurrentState = State.movingForward;
             }
-            CurrentState = State.movingForward;
+
         }
+
     }
 
     /// <summary>
@@ -302,21 +314,12 @@ public class LevelManager : MonoBehaviour
     public void movePlayer(int inSpotsToMove)
     {
 
-        if (currentPlayerLocation >= boardSpots.Length - 1)
-        {
-            if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime || statsfromlevel.TopTotalTime == 0.0F)
-                statsfromlevel.SaveData(); // Saving data to file when player reached to the end
-            Application.LoadLevel("Finish");
-        }
-        else
-        {
             move = false;
             if ((currentPlayerLocation + inSpotsToMove) < boardSpots.Length)
                 currentPlayerLocation = currentPlayerLocation + inSpotsToMove;
             else
                 currentPlayerLocation = boardSpots.Length - 1;
             player.MoveToPosition(boardSpots[currentPlayerLocation]);
-        }
 
     }
 

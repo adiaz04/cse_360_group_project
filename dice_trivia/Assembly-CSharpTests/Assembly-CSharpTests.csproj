@@ -72,7 +72,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Score1Test.cs" />
-    <Compile Include="Assets\Scripts\FadingTest.cs" />
     <Compile Include="Assets\Scripts\LevelManagerTests.cs" />
     <Compile Include="Assets\Scripts\PauseMenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
