@@ -32,6 +32,11 @@ public class statsControl : MonoBehaviour {
 	
 	}
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     public string GetData(string type, string data)
     {
