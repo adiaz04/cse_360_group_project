@@ -1,0 +1,15 @@
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\dice_trivia.CSharpTests2.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\dice_trivia.CSharpTests2.pdb
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\Assembly-CSharp.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\nunit.framework.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\UnityEngine.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\UnityEngine.UI.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\UnityEditor.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\nunit.framework.xml
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\UnityEngine.xml
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\UnityEngine.UI.xml
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\bin\Debug\UnityEditor.xml
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\obj\Debug\dice_trivia.CSharpTests2.csprojResolveAssemblyReference.cache
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\obj\Debug\dice_trivia.CSharpTests2.dll
+C:\Users\Jordan\Desktop\CSE360 Project\cse_360_group_project\dice_trivia\dice_trivia.CSharpTests2\obj\Debug\dice_trivia.CSharpTests2.pdb
