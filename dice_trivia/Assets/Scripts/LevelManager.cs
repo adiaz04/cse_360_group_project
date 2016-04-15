@@ -51,6 +51,12 @@ public class LevelManager : MonoBehaviour
         standby
     }
 
+
+    // Sound Elements
+    public AudioClip[] soundFX;
+    AudioSource source;
+    public bool rolled = false;
+
     /// <summary>
     /// Used to keep track of current state.
     /// </summary>
@@ -95,7 +101,9 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
 
-        LoadData(); // Loading top score statistics from file 
+        LoadData(); // Loading top score statistics from file
+         
+        source = GetComponent<AudioSource>();
 
         quizMenu.SetActive(false); // Hiding the DEV quiz panel
         rollButton.SetActive(false);
@@ -197,6 +205,7 @@ public class LevelManager : MonoBehaviour
     {
         if (CurrentState == State.timeToRollDice)
         {
+            rollState(false);
             Camera.main.transform.parent = diceCameraLocation;
             Camera.main.transform.position = diceCameraLocation.position;
             Camera.main.transform.rotation = diceCameraLocation.transform.rotation;
@@ -230,6 +239,7 @@ public class LevelManager : MonoBehaviour
     {
         if (!theAnswer)
         {
+            playSound(3, false, 0.0f);
             playerTotalFalse += 1; // Incrementing total false answers
             quizMenu.SetActive(false);
             
@@ -252,6 +262,7 @@ public class LevelManager : MonoBehaviour
             CurrentState = State.movingBackward;
         }
         else {
+            playSound(2, false, 0.0f);
             playerTotalTrue += 1;
             quizMenu.SetActive(false);
             
@@ -370,6 +381,25 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    public void rollState(bool state)
+    {
+        if (!state)
+        {
+            playSound(0, true, 0.0f);
+        }
+        else
+        {
+            playSound(1, false, 1.0f);
+        }
+    }
+
+    public void playSound(int soundindex, bool loop, float delay)
+    {
+        source.clip = soundFX[soundindex];
+        source.PlayDelayed(delay);
+        source.loop = loop;
+        source.Play();
+    }
 
     // Save player's data intofile
     public void SaveData()
