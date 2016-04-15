@@ -50,10 +50,10 @@ public class MainMenu : MonoBehaviour {
         FileStream saveFile = File.Create(Application.dataPath + "/topScore.dat");
 
         TopScoreData data = new TopScoreData();
-        data.totalTime = 99.99f;
-        data.totalMoves = 0;
+        data.totalTime = 9999.99f;
+        data.totalMoves = 999;
         data.totalTrue = 0;
-        data.totalFalse = 0;
+        data.totalFalse = 999;
 
         bf.Serialize(saveFile, data);
         saveFile.Close();

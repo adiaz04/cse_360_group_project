@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public Player player;
     public QuestionController questionController;
     public GameObject rollButton;
+    public GameObject statsManager;
     public Transform playerCameraLocation;
     public Transform diceCameraLocation;
     public Transform dice1;
@@ -51,6 +52,12 @@ public class LevelManager : MonoBehaviour
         standby
     }
 
+
+    // Sound Elements
+    public AudioClip[] soundFX;
+    AudioSource source;
+    public bool rolled = false;
+
     /// <summary>
     /// Used to keep track of current state.
     /// </summary>
@@ -73,6 +80,9 @@ public class LevelManager : MonoBehaviour
     int PlayerInaRow = 0;
     int playerLastMove = 0;
 
+    statsControl statsfromlevel;
+
+    /*
     // Current player statistics
     float playerTotalTime = 0.0f;
     int playerTotalMoves = 0;
@@ -83,7 +93,7 @@ public class LevelManager : MonoBehaviour
     int TopTotalMoves = 0;
     int TopTotalTrue = 0;
     int TopTotalFalse = 0;
-
+    */
 
     public GameObject diceMenu;
     public GameObject quizMenu;
@@ -95,8 +105,10 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
 
-        LoadData(); // Loading top score statistics from file 
+        statsfromlevel = statsManager.GetComponent<statsControl>();
 
+        source = GetComponent<AudioSource>();
+        playSound(4, false, 0f);
         quizMenu.SetActive(false); // Hiding the DEV quiz panel
         rollButton.SetActive(false);
         for (int index = 0; index < numberOfSpots; index++)
@@ -136,11 +148,15 @@ public class LevelManager : MonoBehaviour
         {
             if (Vector3.Distance(player.transform.position, boardSpots[currentPlayerLocation].position) < 0.5)
             {
-                
+
                 CurrentState = State.timeToRollDice;
             }
         }
-        playerTotalTime += Time.deltaTime; // Updating the timer
+
+
+
+
+        statsfromlevel.playerTotalTime += Time.deltaTime; // Updating the timer
         timeToRollDice = false;
     }
 
@@ -186,7 +202,7 @@ public class LevelManager : MonoBehaviour
         answerD.GetComponent<Text>().text = answers[3].GetName();
     }
 
-    private IEnumerator Delay (int seconds)
+    private IEnumerator Delay(int seconds)
     {
         yield return new WaitForSeconds(seconds);
     }
@@ -197,6 +213,7 @@ public class LevelManager : MonoBehaviour
     {
         if (CurrentState == State.timeToRollDice)
         {
+            rollState(false);
             Camera.main.transform.parent = diceCameraLocation;
             Camera.main.transform.position = diceCameraLocation.position;
             Camera.main.transform.rotation = diceCameraLocation.transform.rotation;
@@ -230,9 +247,10 @@ public class LevelManager : MonoBehaviour
     {
         if (!theAnswer)
         {
-            playerTotalFalse += 1; // Incrementing total false answers
+            playSound(3, false, 0.0f);
+            statsfromlevel.playerTotalFalse += 1; // Incrementing total false answers
             quizMenu.SetActive(false);
-            
+
             if (PlayerInaRow == -2)
             {
                 movePlayer((playerLastMove * -1) + 2);
@@ -252,9 +270,10 @@ public class LevelManager : MonoBehaviour
             CurrentState = State.movingBackward;
         }
         else {
-            playerTotalTrue += 1;
+            playSound(2, false, 0.0f);
+            statsfromlevel.playerTotalTrue += 1;
             quizMenu.SetActive(false);
-            
+
             if (PlayerInaRow == 2)
             {
                 //rrentState = State.movingForward;
@@ -270,7 +289,7 @@ public class LevelManager : MonoBehaviour
                 {
                     PlayerInaRow += 1;
                 }
-                
+
             }
             CurrentState = State.movingForward;
         }
@@ -282,10 +301,12 @@ public class LevelManager : MonoBehaviour
     /// <param name="inSpotsToMove"></param>
     public void movePlayer(int inSpotsToMove)
     {
-        
-        if (currentPlayerLocation >= boardSpots.Length-1 && playerTotalTime < TopTotalTime)
+
+        if (currentPlayerLocation >= boardSpots.Length - 1)
         {
-            SaveData(); // Saving data to file when player reached to the end
+            if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime)
+                statsfromlevel.SaveData(); // Saving data to file when player reached to the end
+            Application.LoadLevel("Finish");
         }
         else
         {
@@ -321,19 +342,19 @@ public class LevelManager : MonoBehaviour
         {
             if (data == "Time")
             {
-                return playerTotalTime.ToString("F2");
+                return statsfromlevel.playerTotalTime.ToString("F2");
             }
             else if (data == "Moves")
             {
-                return playerTotalTime.ToString();
+                return statsfromlevel.playerTotalTime.ToString();
             }
             else if (data == "Correct")
             {
-                return playerTotalTrue.ToString();
+                return statsfromlevel.playerTotalTrue.ToString();
             }
             else if (data == "False")
             {
-                return playerTotalFalse.ToString();
+                return statsfromlevel.playerTotalFalse.ToString();
             }
             else if (data == "IAR")
             {
@@ -348,19 +369,19 @@ public class LevelManager : MonoBehaviour
         {
             if (data == "Time")
             {
-                return TopTotalTime.ToString("F2");
+                return statsfromlevel.TopTotalTime.ToString("F2");
             }
             else if (data == "Moves")
             {
-                return TopTotalTime.ToString();
+                return statsfromlevel.TopTotalTime.ToString();
             }
             else if (data == "Correct")
             {
-                return TopTotalTrue.ToString();
+                return statsfromlevel.TopTotalTrue.ToString();
             }
             else if (data == "False")
             {
-                return TopTotalFalse.ToString();
+                return statsfromlevel.TopTotalFalse.ToString();
             }
             else
             {
@@ -370,46 +391,23 @@ public class LevelManager : MonoBehaviour
 
     }
 
-
-    // Save player's data intofile
-    public void SaveData()
+    public void rollState(bool state)
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Create(Application.dataPath + "/topScore.dat");
-
-        TopScoreData data = new TopScoreData();
-        data.totalTime = playerTotalTime;
-        data.totalMoves = playerTotalMoves;
-        data.totalTrue = playerTotalTrue;
-        data.totalFalse = playerTotalFalse;
-
-        bf.Serialize(saveFile, data);
-        saveFile.Close();
+        if (!state)
+        {
+            playSound(0, true, 0.0f);
+        }
+        else
+        {
+            playSound(1, false, 1.0f);
+        }
     }
 
-    // Loads top score stats from file
-    public void LoadData()
+    public void playSound(int soundindex, bool loop, float delay)
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Open(Application.dataPath + "/topScore.dat", FileMode.Open);
-        TopScoreData data = (TopScoreData)bf.Deserialize(saveFile);
-        saveFile.Close();
-
-        TopTotalTime = data.totalTime;
-        TopTotalMoves = data.totalMoves;
-        TopTotalTrue = data.totalTrue;
-        TopTotalFalse = data.totalFalse;
-
+        source.clip = soundFX[soundindex];
+        source.PlayDelayed(delay);
+        source.loop = loop;
+        source.Play();
     }
-
-}
-
-// TopScoreData class
-[Serializable]
-class TopScoreData
-{
-    public float totalTime;
-    public int totalMoves;
-    public int totalTrue;
-    public int totalFalse;
 }
