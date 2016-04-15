@@ -7,7 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Score : MonoBehaviour {
+public class Score1 {
 
     // Initializing some variables
     public int score;
@@ -20,7 +20,7 @@ public class Score : MonoBehaviour {
 
 
     /** At game start find the level manager */
-    void Start()
+    public void Start()
     {
         gameStats = GameObject.Find("Level Manager");
     }
@@ -30,7 +30,7 @@ public class Score : MonoBehaviour {
     *   calculate how many questions were answered correct and incorect.
     *   Based on time and questions answered the player's score will be calculated.
     */
-    void Update()
+    public void Update()
     {
         // Setting scoreTime to the time that the game has run 
         scoreTime += Time.deltaTime;
