@@ -14,7 +14,7 @@ namespace Tests
         public void IsGamePausedTest()
         {
             PauseMenu obj = new PauseMenu();
-            obj.debug = true;
+            obj.isPaused = true;
             Assert.Equals(true, obj.isPaused);
         }
         [Test()]
