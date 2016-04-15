@@ -302,9 +302,10 @@ public class LevelManager : MonoBehaviour
     public void movePlayer(int inSpotsToMove)
     {
 
-        if (currentPlayerLocation >= boardSpots.Length - 1 && statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime)
+        if (currentPlayerLocation >= boardSpots.Length - 1)
         {
-            statsfromlevel.SaveData(); // Saving data to file when player reached to the end
+            if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime)
+                statsfromlevel.SaveData(); // Saving data to file when player reached to the end
             Application.LoadLevel("Finish");
         }
         else
