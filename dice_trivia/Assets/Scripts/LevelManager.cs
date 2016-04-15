@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public Player player;
     public QuestionController questionController;
     public GameObject rollButton;
+    public GameObject statsManager;
     public Transform playerCameraLocation;
     public Transform diceCameraLocation;
     public Transform dice1;
@@ -79,6 +80,9 @@ public class LevelManager : MonoBehaviour
     int PlayerInaRow = 0;
     int playerLastMove = 0;
 
+    statsControl statsfromlevel;
+
+    /*
     // Current player statistics
     float playerTotalTime = 0.0f;
     int playerTotalMoves = 0;
@@ -89,7 +93,7 @@ public class LevelManager : MonoBehaviour
     int TopTotalMoves = 0;
     int TopTotalTrue = 0;
     int TopTotalFalse = 0;
-
+    */
 
     public GameObject diceMenu;
     public GameObject quizMenu;
@@ -101,10 +105,8 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
 
-    
+        statsfromlevel = statsManager.GetComponent<statsControl>();
 
-        LoadData(); // Loading top score statistics from file
-         
         source = GetComponent<AudioSource>();
         playSound(4, false, 0f);
         quizMenu.SetActive(false); // Hiding the DEV quiz panel
@@ -146,11 +148,15 @@ public class LevelManager : MonoBehaviour
         {
             if (Vector3.Distance(player.transform.position, boardSpots[currentPlayerLocation].position) < 0.5)
             {
-                
+
                 CurrentState = State.timeToRollDice;
             }
         }
-        playerTotalTime += Time.deltaTime; // Updating the timer
+
+
+
+
+        statsfromlevel.playerTotalTime += Time.deltaTime; // Updating the timer
         timeToRollDice = false;
     }
 
@@ -196,7 +202,7 @@ public class LevelManager : MonoBehaviour
         answerD.GetComponent<Text>().text = answers[3].GetName();
     }
 
-    private IEnumerator Delay (int seconds)
+    private IEnumerator Delay(int seconds)
     {
         yield return new WaitForSeconds(seconds);
     }
@@ -242,9 +248,9 @@ public class LevelManager : MonoBehaviour
         if (!theAnswer)
         {
             playSound(3, false, 0.0f);
-            playerTotalFalse += 1; // Incrementing total false answers
+            statsfromlevel.playerTotalFalse += 1; // Incrementing total false answers
             quizMenu.SetActive(false);
-            
+
             if (PlayerInaRow == -2)
             {
                 movePlayer((playerLastMove * -1) + 2);
@@ -265,9 +271,9 @@ public class LevelManager : MonoBehaviour
         }
         else {
             playSound(2, false, 0.0f);
-            playerTotalTrue += 1;
+            statsfromlevel.playerTotalTrue += 1;
             quizMenu.SetActive(false);
-            
+
             if (PlayerInaRow == 2)
             {
                 //rrentState = State.movingForward;
@@ -283,7 +289,7 @@ public class LevelManager : MonoBehaviour
                 {
                     PlayerInaRow += 1;
                 }
-                
+
             }
             CurrentState = State.movingForward;
         }
@@ -295,10 +301,11 @@ public class LevelManager : MonoBehaviour
     /// <param name="inSpotsToMove"></param>
     public void movePlayer(int inSpotsToMove)
     {
-        
-        if (currentPlayerLocation >= boardSpots.Length-1 && playerTotalTime < TopTotalTime)
+
+        if (currentPlayerLocation >= boardSpots.Length - 1 && statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime)
         {
-            SaveData(); // Saving data to file when player reached to the end
+            statsfromlevel.SaveData(); // Saving data to file when player reached to the end
+            Application.LoadLevel("Finish");
         }
         else
         {
@@ -334,19 +341,19 @@ public class LevelManager : MonoBehaviour
         {
             if (data == "Time")
             {
-                return playerTotalTime.ToString("F2");
+                return statsfromlevel.playerTotalTime.ToString("F2");
             }
             else if (data == "Moves")
             {
-                return playerTotalTime.ToString();
+                return statsfromlevel.playerTotalTime.ToString();
             }
             else if (data == "Correct")
             {
-                return playerTotalTrue.ToString();
+                return statsfromlevel.playerTotalTrue.ToString();
             }
             else if (data == "False")
             {
-                return playerTotalFalse.ToString();
+                return statsfromlevel.playerTotalFalse.ToString();
             }
             else if (data == "IAR")
             {
@@ -361,19 +368,19 @@ public class LevelManager : MonoBehaviour
         {
             if (data == "Time")
             {
-                return TopTotalTime.ToString("F2");
+                return statsfromlevel.TopTotalTime.ToString("F2");
             }
             else if (data == "Moves")
             {
-                return TopTotalTime.ToString();
+                return statsfromlevel.TopTotalTime.ToString();
             }
             else if (data == "Correct")
             {
-                return TopTotalTrue.ToString();
+                return statsfromlevel.TopTotalTrue.ToString();
             }
             else if (data == "False")
             {
-                return TopTotalFalse.ToString();
+                return statsfromlevel.TopTotalFalse.ToString();
             }
             else
             {
@@ -402,46 +409,4 @@ public class LevelManager : MonoBehaviour
         source.loop = loop;
         source.Play();
     }
-
-    // Save player's data intofile
-    public void SaveData()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Create(Application.dataPath + "/topScore.dat");
-
-        TopScoreData data = new TopScoreData();
-        data.totalTime = playerTotalTime;
-        data.totalMoves = playerTotalMoves;
-        data.totalTrue = playerTotalTrue;
-        data.totalFalse = playerTotalFalse;
-
-        bf.Serialize(saveFile, data);
-        saveFile.Close();
-    }
-
-    // Loads top score stats from file
-    public void LoadData()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Open(Application.dataPath + "/topScore.dat", FileMode.Open);
-        TopScoreData data = (TopScoreData)bf.Deserialize(saveFile);
-        saveFile.Close();
-
-        TopTotalTime = data.totalTime;
-        TopTotalMoves = data.totalMoves;
-        TopTotalTrue = data.totalTrue;
-        TopTotalFalse = data.totalFalse;
-
-    }
-
-}
-
-// TopScoreData class
-[Serializable]
-class TopScoreData
-{
-    public float totalTime;
-    public int totalMoves;
-    public int totalTrue;
-    public int totalFalse;
 }

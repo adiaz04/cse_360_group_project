@@ -60,6 +60,10 @@
      <Compile Include="Assets\Scripts\QuizController.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\timer.cs" />
+     <Compile Include="Assets\setJump.cs" />
+     <Compile Include="Assets\showDataMenu.cs" />
+     <Compile Include="Assets\startHide.cs" />
+     <Compile Include="Assets\statsControl.cs" />
      <None Include="Assets\Text\questions.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />

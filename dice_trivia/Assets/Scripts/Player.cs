@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     }
     private bool moving = false;
     private Transform targetLocation;
+    public bool finishScreen = false;
 
 
     // Added by Itay
@@ -32,27 +33,38 @@ public class Player : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (this.targetLocation != null)
-        {
-            transform.position = Vector3.SmoothDamp(transform.position, targetLocation.position, ref speed, smoothTime);
-        }
 
-        if (Vector3.Distance(transform.position,targetLocation.position) > 0.5)
+        if (finishScreen)
         {
             moving = true;
             animator.enabled = true;
             animator.speed = 2.0f;
-            animator.Play("Walk");
-            
+            animator.Play("Jump");
         }
         else
         {
-            animator.enabled = true;
-            animator.speed = 2.0f;
-            animator.Play("Idle");
-            moving = false;
-        }
+            if (this.targetLocation != null)
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, targetLocation.position, ref speed, smoothTime);
+            }
 
+            if (Vector3.Distance(transform.position, targetLocation.position) > 0.5)
+            {
+                moving = true;
+                animator.enabled = true;
+                animator.speed = 2.0f;
+                animator.Play("Walk");
+
+            }
+            else
+            {
+                animator.enabled = true;
+                animator.speed = 2.0f;
+                animator.Play("Idle");
+                moving = false;
+            }
+        }
+       
     }
 
     /// <summary>
