@@ -304,7 +304,7 @@ public class LevelManager : MonoBehaviour
 
         if (currentPlayerLocation >= boardSpots.Length - 1)
         {
-            if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime)
+            if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime || statsfromlevel.TopTotalTime == 0.0F)
                 statsfromlevel.SaveData(); // Saving data to file when player reached to the end
             Application.LoadLevel("Finish");
         }
