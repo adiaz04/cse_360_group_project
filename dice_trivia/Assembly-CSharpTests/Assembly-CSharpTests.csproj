@@ -71,8 +71,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\LevelManager1Tests.cs" />
     <Compile Include="Assets\Scripts\Score1Test.cs" />
-    <Compile Include="Assets\Scripts\LevelManagerTests.cs" />
     <Compile Include="Assets\Scripts\PauseMenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -191,6 +191,9 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update the UI with questions.
+    /// </summary>
     private void UpdateQuestionUI()
     {
         quizMenu.SetActive(true);
@@ -202,10 +205,6 @@ public class LevelManager : MonoBehaviour
         answerD.GetComponent<Text>().text = answers[3].GetName();
     }
 
-    private IEnumerator Delay(int seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-    }
     /// <summary>
     /// Move Camera to correct location based on current game state.
     /// </summary>
@@ -242,7 +241,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    // Calculating movment based on the quiz answer and the answers history
+    /// <summary>
+    /// Calculating movment based on the quiz answer and the answers history
+    /// </summary>
+    /// <param name="theAnswer"></param>
     public void checkAnswer(bool theAnswer)
     {
         if (!theAnswer)
@@ -323,6 +325,9 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Rolls the dice.
+    /// </summary>
     public void RollDice()
     {
         dice1.GetComponent<Dice>().Roll();
@@ -330,6 +335,10 @@ public class LevelManager : MonoBehaviour
         CurrentState = State.diceRolled;
     }
 
+    /// <summary>
+    /// Update last move.
+    /// </summary>
+    /// <param name="diceResult"></param>
     public void SetLastMove(int diceResult)
     {
         playerLastMove = diceResult;
@@ -338,7 +347,12 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    // Grabbing data both for the current menu and top menun display
+    /// <summary>
+    /// Grabbing data both for the current menu and top menun display
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="data"></param>
+    /// <returns></returns>
     public string GetData(string type, string data)
     {
         if (type == "Current")
@@ -394,6 +408,10 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// update the roll state.
+    /// </summary>
+    /// <param name="state"></param>
     public void rollState(bool state)
     {
         if (!state)
@@ -406,6 +424,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Play sound.
+    /// </summary>
+    /// <param name="soundindex"></param>
+    /// <param name="loop"></param>
+    /// <param name="delay"></param>
     public void playSound(int soundindex, bool loop, float delay)
     {
         source.clip = soundFX[soundindex];
