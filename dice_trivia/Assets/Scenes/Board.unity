@@ -5992,10 +5992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8dc5669dfe171a438da99e0a9012141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTotalTime: 0
   playerTotalMoves: 0
-  playerTotalTrue: 0
-  playerTotalFalse: 0
   TopTotalTime: 0
   TopTotalMoves: 0
   TopTotalTrue: 0
@@ -6724,7 +6721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &907727221
 RectTransform:
   m_ObjectHideFlags: 0
