@@ -72,8 +72,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LevelManager1Tests.cs" />
-    <Compile Include="Assets\Scripts\Score1Test.cs" />
+    <Compile Include="Assets\Scripts\QuestionController1Tests.cs" />
     <Compile Include="Assets\Scripts\PauseMenuTest.cs" />
+    <Compile Include="Assets\Scripts\Score1Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

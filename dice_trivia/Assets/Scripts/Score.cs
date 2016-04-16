@@ -1,26 +1,43 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Calculates the score for the user based on time and answers answered corectly and incorectly
+/// 
+/// @author Jordan Bruno
+/// @version 4-10-16
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 
 public class Score : MonoBehaviour
 {
 
-    // Initializing some variables
+    /** Used to hold the player's score */
     public int score;
+    /** Used for the players game time */
     public float scoreTime;
+    /** Used to see how many answers were answered correctly */
     public int correct;
+    /** Used to see how many answers were answered incorrectly */
     public int wrong;
     public string MenuType = "";
 
     GameObject gameStats;
 
 
+    /// <summary>
+    /// At game start find the Level Manager
+    /// </summary>
     void Start()
     {
         gameStats = GameObject.Find("Level Manager");
     }
 
 
-    // Update is called once per frame
+    /// <summary>
+    /// Calls to the level manager to calculate how many questions
+    /// were answered correct and incorect. Based on time and questions 
+    /// answered the player's score will be calculated.
+    /// </summary>
     void Update()
     {
         // Setting scoreTime to the time that the game has run 
@@ -42,6 +59,13 @@ public class Score : MonoBehaviour
     }
 
 
+
+    /// <summary>
+    /// Returns the score for the LevelManager
+    /// </summary>
+    /// <returns>
+    /// score Players calculated score
+    /// </returns>
     public int getScore()
     {
         return score;
