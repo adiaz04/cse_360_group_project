@@ -2,7 +2,6 @@ C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\De
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharpTests.pdb
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Assembly-CSharp.dll
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEngine.dll
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEngine.UI.dll
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\UnityEditor.dll
 C:\Users\adiaz\git\cse_360_group_project\dice_trivia\Assembly-CSharpTests\bin\Debug\Mono.Cecil.dll
