@@ -67,13 +67,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HSController.cs" />
     <Compile Include="Assets\Scenes\showData.cs" />
     <Compile Include="Assets\Scripts\Answer.cs" />
     <Compile Include="Assets\Scripts\CameraPosition.cs" />
     <Compile Include="Assets\Scripts\Dice.cs" />
     <Compile Include="Assets\Scripts\Fading.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\LevelManager1.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
