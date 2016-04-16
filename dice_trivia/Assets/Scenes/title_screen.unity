@@ -395,7 +395,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 706782713}
   - 114: {fileID: 706782712}
-  - 114: {fileID: 706782714}
   m_Layer: 0
   m_Name: statsManager
   m_TagString: Untagged
@@ -422,6 +421,8 @@ MonoBehaviour:
   TopTotalMoves: 0
   TopTotalTrue: 0
   TopTotalFalse: 0
+  addScoreURL: http://dice.ib-zone.com/setData.php?
+  highscoreURL: http://dice.ib-zone.com/getData.php
 --- !u!4 &706782713
 Transform:
   m_ObjectHideFlags: 0
@@ -434,17 +435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &706782714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 706782711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b141084a59ee294ea948cd01f651104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &710126990
 GameObject:
   m_ObjectHideFlags: 0

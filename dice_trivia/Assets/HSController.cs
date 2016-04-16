@@ -4,22 +4,32 @@ using System.Collections;
 public class HSController : MonoBehaviour
 {
     private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
-    public string addScoreURL = "http://dice.ib-zone.com/setData.php"; //be sure to add a ? to your url
+    public string addScoreURL = "http://dice.ib-zone.com/setData.php?"; //be sure to add a ? to your url
     public string highscoreURL = "http://dice.ib-zone.com/getData.php";
+
+    public GameObject statsManager;
+    statsControl statsfromlevel;
 
     void Start()
     {
+        statsfromlevel = statsManager.GetComponent<statsControl>();
         StartCoroutine(GetScores());
     }
 
+
+    public void setStats()
+    {
+        StartCoroutine(PostScores("99:99", 1, 5));
+    }
+
     // remember to use StartCoroutine when calling this function!
-    IEnumerator PostScores(string name, int score)
+    IEnumerator PostScores(string name, int totalCorrect, int totalFalse)
     {
         //This connects to a server side php script that will add the name and score to a MySQL DB.
         // Supply it with a string representing the players name and the players score.
-        string hash = Md5Sum(name + score + secretKey);
+        string hash = Md5Sum(name + totalCorrect + totalFalse + secretKey);
 
-        string post_url = addScoreURL + "name=" + WWW.EscapeURL(name) + "&score=" + score + "&hash=" + hash;
+        string post_url = addScoreURL + "name=" + WWW.EscapeURL(name) + "&totalCorrect=" + totalCorrect + "&totalFalse=" + totalFalse + "&hash=" + hash;
 
         // Post the URL to the site and create a download object to get the result.
         WWW hs_post = new WWW(post_url);
@@ -27,7 +37,7 @@ public class HSController : MonoBehaviour
 
         if (hs_post.error != null)
         {
-            print("There was an error posting the high score: " + hs_post.error);
+            print("Error Getting Data: " + hs_post.error);
         }
     }
 
@@ -35,13 +45,13 @@ public class HSController : MonoBehaviour
     // remember to use StartCoroutine when calling this function!
     IEnumerator GetScores()
     {
-        gameObject.GetComponent<GUIText>().text = "Loading Scores";
+        gameObject.GetComponent<GUIText>().text = "Loading Data";
         WWW hs_get = new WWW(highscoreURL);
         yield return hs_get;
 
         if (hs_get.error != null)
         {
-            print("There was an error getting the high score: " + hs_get.error);
+            print("Error Getting Data: " + hs_get.error);
         }
         else
         {

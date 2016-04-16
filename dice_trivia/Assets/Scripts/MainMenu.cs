@@ -19,10 +19,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.R) && Input.GetKeyUp(KeyCode.E) && Input.GetKeyUp(KeyCode.S))
-        {
-            ResetData();
-        }
+
     }
 
 	public void Stats()
@@ -42,20 +39,5 @@ public class MainMenu : MonoBehaviour {
         Application.LoadLevel(startLevel);
 
         Debug.Log("Faded Out");
-    }
-
-    public void ResetData()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Create(Application.dataPath + "/topScore.dat");
-
-        TopScoreData data = new TopScoreData();
-        data.totalTime = 9999.99f;
-        data.totalMoves = 999;
-        data.totalTrue = 0;
-        data.totalFalse = 999;
-
-        bf.Serialize(saveFile, data);
-        saveFile.Close();
     }
 }

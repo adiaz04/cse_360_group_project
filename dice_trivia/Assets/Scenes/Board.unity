@@ -6000,6 +6000,8 @@ MonoBehaviour:
   TopTotalMoves: 0
   TopTotalTrue: 0
   TopTotalFalse: 0
+  addScoreURL: http://dice.ib-zone.com/setData.php?
+  highscoreURL: http://dice.ib-zone.com/getData.php
 --- !u!4 &732141833
 Transform:
   m_ObjectHideFlags: 0
