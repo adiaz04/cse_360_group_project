@@ -12,10 +12,10 @@ public class statsControl : MonoBehaviour {
 
 
     // Current player statistics
-    public float playerTotalTime = 0.0f;
+    static float playerTotalTime = 0.0f;
     public int playerTotalMoves = 0;
-    public int playerTotalTrue = 0;
-    public int playerTotalFalse = 0;
+    static int playerTotalTrue = 0;
+    static int playerTotalFalse = 0;
     // Top plater statistics
     public float TopTotalTime = 0.0f;
     public int TopTotalMoves = 0;
@@ -38,9 +38,46 @@ public class statsControl : MonoBehaviour {
 	
 	}
 
+
+    public void setTime(float time)
+    {
+        playerTotalTime = time;
+    }
+
+    public float getTime()
+    {
+        return playerTotalTime;
+    }
+
+
+
+    public void setTotalTrue(int totalcorrect)
+    {
+        playerTotalTrue = totalcorrect;
+    }
+
+    public int getTotalTrue()
+    {
+        return playerTotalTrue;
+    }
+
+
+    public void setTotalFalse(int totalfalse)
+    {
+        playerTotalFalse = totalfalse;
+    }
+
+    public int getTotalFalse()
+    {
+        return playerTotalFalse;
+    }
+
+
+
+
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
     }
 
 

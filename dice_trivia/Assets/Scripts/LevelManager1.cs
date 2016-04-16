@@ -154,7 +154,7 @@ public class LevelManager1
 
 
 
-        statsfromlevel.playerTotalTime += Time.deltaTime; // Updating the timer
+        statsfromlevel.setTime(statsfromlevel.getTime() + Time.deltaTime); // Updating the timer
         timeToRollDice = false;
     }
 
@@ -352,19 +352,19 @@ public class LevelManager1
         {
             if (data == "Time")
             {
-                return statsfromlevel.playerTotalTime.ToString("F2");
+                return statsfromlevel.getTime().ToString("F2");
             }
             else if (data == "Moves")
             {
-                return statsfromlevel.playerTotalTime.ToString();
+                return "";
             }
             else if (data == "Correct")
             {
-                return statsfromlevel.playerTotalTrue.ToString();
+                return statsfromlevel.getTotalTrue().ToString();
             }
             else if (data == "False")
             {
-                return statsfromlevel.playerTotalFalse.ToString();
+                return statsfromlevel.getTotalFalse().ToString();
             }
             else if (data == "IAR")
             {

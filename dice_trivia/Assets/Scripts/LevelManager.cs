@@ -156,7 +156,7 @@ public class LevelManager : MonoBehaviour
 
 
 
-        statsfromlevel.playerTotalTime += Time.deltaTime; // Updating the timer
+        statsfromlevel.setTime(statsfromlevel.getTime() + Time.deltaTime); // Updating the timer
         timeToRollDice = false;
     }
 
@@ -250,7 +250,7 @@ public class LevelManager : MonoBehaviour
         if (!theAnswer)
         {
             playSound(3, false, 0.0f);
-            statsfromlevel.playerTotalFalse += 1; // Incrementing total false answers
+            statsfromlevel.setTotalFalse(statsfromlevel.getTotalFalse() + 1); // Incrementing total false answers
             quizMenu.SetActive(false);
 
             if (PlayerInaRow == -2)
@@ -275,14 +275,14 @@ public class LevelManager : MonoBehaviour
 
             if (currentPlayerLocation >= boardSpots.Length - 1)
             {
-                if (statsfromlevel.playerTotalTime < statsfromlevel.TopTotalTime || statsfromlevel.TopTotalTime == 0.0F)
+                if (statsfromlevel.getTime() < statsfromlevel.TopTotalTime || statsfromlevel.TopTotalTime == 0.0F)
                     statsfromlevel.SaveData(); // Saving data to file when player reached to the end
                 Application.LoadLevel("Finish");
             }
             else {
 
                 playSound(2, false, 0.0f);
-                statsfromlevel.playerTotalTrue += 1;
+                statsfromlevel.setTotalTrue(statsfromlevel.getTotalTrue() + 1);
                 quizMenu.SetActive(false);
 
                 if (PlayerInaRow == 2)
@@ -359,19 +359,19 @@ public class LevelManager : MonoBehaviour
         {
             if (data == "Time")
             {
-                return statsfromlevel.playerTotalTime.ToString("F2");
+                return statsfromlevel.getTime().ToString("F2");
             }
             else if (data == "Moves")
             {
-                return statsfromlevel.playerTotalTime.ToString();
+                return "";
             }
             else if (data == "Correct")
             {
-                return statsfromlevel.playerTotalTrue.ToString();
+                return statsfromlevel.getTotalTrue().ToString();
             }
             else if (data == "False")
             {
-                return statsfromlevel.playerTotalFalse.ToString();
+                return statsfromlevel.getTotalFalse().ToString();
             }
             else if (data == "IAR")
             {
