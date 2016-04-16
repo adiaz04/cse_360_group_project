@@ -16,13 +16,13 @@ public class Score1 {
     public int wrong;
     public string MenuType = "";
 
-    GameObject gameStats;
+    //GameObject gameStats;
 
 
     /** At game start find the level manager */
     public void Start()
     {
-        gameStats = GameObject.Find("Level Manager");
+        //gameStats = GameObject.Find("Level Manager");
     }
 
 
@@ -33,12 +33,12 @@ public class Score1 {
     public void Update()
     {
         // Setting scoreTime to the time that the game has run 
-        scoreTime += Time.deltaTime;
+        scoreTime = 100;     //+= Time.deltaTime;
 
         // Recieving total correct and wrong from the level manager
-        LevelManager temp = gameStats.GetComponent<LevelManager>();
-        correct = System.Int32.Parse(temp.GetData("Current", "Correct"));
-        wrong = System.Int32.Parse(temp.GetData("Current", "False"));
+        // LevelManager temp = gameStats.GetComponent<LevelManager>();
+        correct = 2;          //System.Int32.Parse(temp.GetData("Current", "Correct"));
+        wrong = 2;            //System.Int32.Parse(temp.GetData("Current", "False"));
 
         // Testing to make sure we are getting the correct values
         //Debug.Log("Correct = " + correct);
