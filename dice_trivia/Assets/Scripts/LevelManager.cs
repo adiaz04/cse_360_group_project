@@ -114,6 +114,10 @@ public class LevelManager : MonoBehaviour
         for (int index = 0; index < numberOfSpots; index++)
         {
             boardSpots[index] = (Transform)Instantiate(spotTypeBlue, new Vector3(index, 0, 0), Quaternion.identity);
+            if (index % 5 == 0)
+            {
+                boardSpots[index].GetComponent<Renderer>().material.color = Color.red;
+            }
         }
         player.transform.position = boardSpots[0].transform.position;
         Camera.main.transform.parent = playerCameraLocation;
@@ -284,10 +288,14 @@ public class LevelManager : MonoBehaviour
                 playSound(2, false, 0.0f);
                 statsfromlevel.setTotalTrue(statsfromlevel.getTotalTrue() + 1);
                 quizMenu.SetActive(false);
-
+                if (currentPlayerLocation % 5 == 0)
+                {
+                    movePlayer(2);
+                }
                 if (PlayerInaRow == 2)
                 {
                     //rrentState = State.movingForward;
+
                     movePlayer(2);
                     PlayerInaRow = 0;
                 }
