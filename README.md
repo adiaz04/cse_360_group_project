@@ -15,7 +15,7 @@ We will tag each sprint accordingly, please download sprint at appropriate link.
 
 - [x] [Sprint 1] (https://github.com/skinnyMan/cse_360_group_project/releases/tag/Sprint1) Due - 1 April 2016
 - [x] [Sprint 2] (https://github.com/skinnyMan/cse_360_group_project/releases/tag/Sprint2) Due - 15 April 2016
-- [ ] [Sprint 3] () Due - 29 April 2016
+- [x] [Sprint 3] (https://github.com/skinnyMan/cse_360_group_project/releases/tag/Sprint3) Due - 29 April 2016
 
 ### Each tag will include a directory with 3 folders 
   * documentation/ 
@@ -23,7 +23,7 @@ We will tag each sprint accordingly, please download sprint at appropriate link.
   * dice_dash/     (source code)
 
 ## Building:
-No need to play, just run the html file in the build directory or follow the link below
+No need to build, just run the html file in the build directory or follow the link below
 
 ## Unit Testing
 Our project is using a continuous integration server which kicks off all our unit tests on every commit and merge request.
