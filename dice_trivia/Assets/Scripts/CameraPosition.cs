@@ -6,7 +6,7 @@ public class CameraPosition : MonoBehaviour {
     public Transform player;
     public Vector3 targetPosition;
     public float speed = 4.0f;
-    public float height = 2.0f;
+    public float height = 5.0f;
     public float radius = 10.0f;
 
     private Vector3 offset;
