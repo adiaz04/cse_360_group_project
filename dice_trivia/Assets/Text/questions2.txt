@@ -1,0 +1,85 @@
+# This is a comment, all lines starting with '#' are comments
+Q The testing technique that requires devising test cases to demonstrate that each program function is operational is called.
+# All answers are added to the last declared questions
+C Black-box testing.
+A Glass-box testing.
+A Grey-box testing.
+A White-box testing.
+# The next question should go below
+Q The testing technique that requires devising test cases to exercise the internal logic of a software module is called.
+A Behavioral testing.
+A Black-box testing.
+A Grey-box testing.
+C White-box testing.
+# The next question should go below
+Q The cyclomatic complexity metric provides the designer with information regarding the number of.
+A Cycles in the program.
+A Errors in the program.
+C Independent logic paths in the program.
+A Statements in the program.
+# The next question should go below
+Q Which of the following does top-down integration testing NOT have as a major advantage?
+C Low level modules never need testing.
+A Major decision points are tested early.
+A No drivers need to be written.
+A Simple stubs need to be written.
+# The next question should go below.
+Q Bottom-up integration testing has major advantage(s) that.
+A Major decision points are tested early.
+A No drivers need to be written.
+C No stubs need to be written.
+A Regression testing is not required.
+# The next question should go below.
+Q Which of the following are the objectives for formal technical reviews?
+A Allow senior staff members to correct errors.
+A Assess programmer productivity.
+A Determining who introduced an error into a program.
+C Uncover errors in software work products.
+# The next question should go below
+Q Which is not a decision made at the end of a formal technical review?
+A Accept the work product without modification.
+A Accept the work with minor modifications.
+C Modify the work product and continue the review.
+A Reject the product due to severe errors.
+# The next question should go below
+Q Which of the following is NOT a factor in the measurement of effort for a code review?
+A Effort to prepare for the review.
+A Effort to hold the review.
+A Rework effort.
+C Training effort.
+# The next question should go below
+Q Cohesion is a qualitative indication of the degree to which a module.
+A Can be written more compactly.
+C Focuses on just one thing.
+A Is able to complete its function in a timely manner.
+A Is connected to other modules and the outside world.
+# The next question should go below
+Q Coupling is a qualitative indication of the degree to which a module.
+A Can be written more compactly.
+A Focuses on just one thing.
+A Is able to complete its function in a timely manner.
+C Is connected to other modules and the outside world.
+# The next question should go below
+Q design goal when creating a module is to.
+A Maximize coupling and cohesion.
+A Minimize coupling and cohesion.
+A Maximize coupling and minimize cohesion.
+C Minimize coupling and maximize cohesion.
+# The next question should go below
+Q Which of the following is NOT a goal of information hiding?
+A Reducing the likelihood of "side effects".
+A Emphasizing communication.
+A Resulting in higher quality software.
+C Removing errors from software.
+# The next question should go below
+Q In a structure chart, the decision making modules should be placed.
+C Towards the top of the structure.
+A At the bottom of the structure.
+A In the middle of the structure.
+A Wherever they are needed.
+# The next question should go below
+Q The number of functions that a function calls is defined as its.
+A Fan-in.
+C Fan-out.
+A Coupling.
+A Cohesion.
