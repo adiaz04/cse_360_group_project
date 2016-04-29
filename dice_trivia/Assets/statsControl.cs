@@ -11,7 +11,9 @@ using System.Globalization;
 public class statsControl : MonoBehaviour {
 
 
-    static int playerAvatar = 1;
+    static int playerAvatar = 0;
+
+
 
     // Current player statistics
     static float playerTotalTime = 0.0f;
@@ -40,6 +42,20 @@ public class statsControl : MonoBehaviour {
 	
 	}
 
+
+    public void setAvatar(int result)
+    {
+
+        playerAvatar = result;
+    }
+
+
+    public int sendAvatar()
+    {
+
+        return playerAvatar;
+
+    }
 
     public void setTime(float time)
     {
