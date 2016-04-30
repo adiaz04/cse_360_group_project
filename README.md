@@ -7,6 +7,13 @@ Diaz, Angel
 Ryan, Alex  
 Brady, Hunter
 
+###GitHub Usernames 
+* SkinnyMan - Angel Diaz
+* itaybraverman - Itay Braverman
+* DelishusCake - Hunter Brady
+* alexgryan - Alex Ryan
+* JordanBruno - Jordan Bruno
+
 # Backlog
 Items with green labels have been completed.
 Our Scrum backlog can be found here [backlog](https://trello.com/b/lpryJmT0/backlog-general)
