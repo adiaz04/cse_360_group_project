@@ -8,6 +8,7 @@ Ryan, Alex
 Brady, Hunter
 
 # Backlog
+Items with green labels have been completed.
 Our Scrum backlog can be found here [backlog](https://trello.com/b/lpryJmT0/backlog-general)
 
 # Sprints
@@ -27,6 +28,7 @@ No need to build, just run the html file in the build directory or follow the li
 
 ## Unit Testing
 Our project is using a continuous integration server which kicks off all our unit tests on every commit and merge request.
+There are functional test cases defined in our documentation folder.
 
 ## Running:
 The binary executable is uploaded on a private server but can be found here:
