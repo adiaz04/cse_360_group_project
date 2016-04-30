@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2abc91f963d55f4b901fa6fb46c4cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLevel: Board
+  startLevel: Board 1
   statsLevel: 
 --- !u!114 &1683325176
 MonoBehaviour:

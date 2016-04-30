@@ -281,7 +281,8 @@ public class LevelManager : MonoBehaviour
             {
                 if (statsfromlevel.getTime() < statsfromlevel.TopTotalTime || statsfromlevel.TopTotalTime == 0.0F)
                     statsfromlevel.SaveData(); // Saving data to file when player reached to the end
-                Application.LoadLevel("Finish");
+                int levelIndex = Application.loadedLevel;
+                Application.LoadLevel(levelIndex + 1);
             }
             else {
 
